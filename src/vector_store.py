@@ -1,4 +1,14 @@
-from langchain.text_splitter import CharacterTextSplitter
+try:
+    from langchain.text_splitter import CharacterTextSplitter
+except Exception:
+    try:
+        from langchain.text_splitters import CharacterTextSplitter
+    except Exception as e:
+        raise ImportError(
+            "Could not import CharacterTextSplitter from langchain. "
+            "Your installed langchain version may be incompatible. "
+            "Install a compatible version, e.g. `pip install 'langchain>=0.0.278,<1.0'`"
+        ) from e
 from langchain_community.vectorstores import Chroma
 from langchain_community.document_loaders.csv_loader import CSVLoader
 from langchain_huggingface import HuggingFaceEmbeddings
