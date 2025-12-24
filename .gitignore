@@ -1,4 +1,6 @@
 venv/
+.venv/
+.venv_py312/
 logs/
 ANIME_RECOMMENDER.egg-info/
 .env

@@ -1,4 +1,4 @@
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
 def get_anime_prompt():
     template = """
@@ -19,9 +19,9 @@ Context:
 {context}
 
 User's question:
-{question}
+{input}
 
 Your well-structured response:
 """
 
-    return PromptTemplate(template=template, input_variables=["context", "question"])
+    return PromptTemplate(template=template, input_variables=["context", "input"])
